@@ -492,6 +492,14 @@ export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    heroImage: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    > &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -619,6 +627,14 @@ export interface ApiModuleModule extends Struct.CollectionTypeSchema {
         };
       }>;
     feedbacks: Schema.Attribute.Relation<'oneToMany', 'api::feedback.feedback'>;
+    heroImage: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    > &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     level: Schema.Attribute.Enumeration<
       ['beginner', 'intermediate', 'advanced']
     > &
