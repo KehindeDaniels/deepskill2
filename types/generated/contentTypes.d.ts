@@ -653,7 +653,6 @@ export interface ApiModuleModule extends Struct.CollectionTypeSchema {
         };
       }>;
     slug: Schema.Attribute.UID<'title'> &
-      Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -678,6 +677,12 @@ export interface ApiModuleModule extends Struct.CollectionTypeSchema {
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    wordCount: Schema.Attribute.Integer &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
   };
 }
 

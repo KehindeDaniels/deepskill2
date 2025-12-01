@@ -32,7 +32,7 @@
         }
       },
       "targetField": "title",
-      "required": true
+      "required": false
     },
     "shortDescription": {
       "type": "text",
@@ -58,11 +58,7 @@
           "localized": true
         }
       },
-      "enum": [
-        "beginner",
-        "intermediate",
-        "advanced"
-      ]
+      "enum": ["beginner", "intermediate", "advanced"]
     },
     "category": {
       "type": "relation",
@@ -86,12 +82,7 @@
         }
       },
       "multiple": true,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ]
+      "allowedTypes": ["images", "files", "videos", "audios"]
     },
     "avgRating": {
       "type": "decimal",
@@ -115,12 +106,15 @@
         }
       },
       "multiple": false,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ]
+      "allowedTypes": ["images", "files", "videos", "audios"]
+    },
+    "wordCount": {
+      "type": "integer",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     }
   }
 }
